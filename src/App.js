@@ -4,6 +4,7 @@ import  Home  from "./views/Home";
 import  Header from "./Componets/Header";
 import Sugetionslist from './Componets/SugetionsList';
 import CategoriesList from './Componets/CategoriesList';
+import PlayLayout from './Componets/Layouts/PlayLayout';
 import Api from '../utils/api';
 
 export default class App  extends Component {
@@ -27,6 +28,7 @@ export default class App  extends Component {
     return (
       <Home>
         <Header />
+        <PlayLayout />
         <CategoriesList data={this.state.categories}/>
         <Sugetionslist data={this.state.sugestions} />
       </Home>

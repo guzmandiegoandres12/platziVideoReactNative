@@ -10,11 +10,12 @@
   },
   "dependencies": {
     "expo": "~37.0.10",
+    "expo-av": "^8.1.0",
     "expo-constants": "^9.0.0",
     "expo-updates": "~0.1.0",
     "react": "~16.9.0",
     "react-dom": "~16.9.0",
-    "react-native": "^0.62.2",
+    "react-native": "~0.61.4",
     "react-native-gesture-handler": "~1.6.0",
     "react-native-reanimated": "~1.7.0",
     "react-native-screens": "~2.2.0",
