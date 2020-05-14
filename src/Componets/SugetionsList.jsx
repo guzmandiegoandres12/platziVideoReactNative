@@ -1,15 +1,15 @@
 import React,{ Component } from 'react';
 import { Text, FlatList } from 'react-native';
-import Sugestionlayout  from '../Componets/Lists/SugestionLayout';
-import Empty from '../Componets/Lists/Empty';
-import VerticalSeparator from '../Componets/Lists/VerticalSeparator';
-import Sugestion from "../Componets/Sugestion";
+import Sugestionlayout  from './Layouts/SugestionLayout';
+import Empty from './Lists/Empty';
+import VerticalSeparator from './Lists/VerticalSeparator';
+import Sugestion from "./Sugestion";
 
 class SugetionsList extends Component {
   keyestractor = item => item.id.toString()
   renderEmpty = () => <Empty text="No hay sugerencias" />
   itemSeparator = () => <VerticalSeparator/>
-  render() {
+  render() { 
     return (
       <Sugestionlayout title="Sugerencias para ti">
         <FlatList 
