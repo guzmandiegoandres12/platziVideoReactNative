@@ -3,8 +3,9 @@ import { View, Text, StyleSheet  } from 'react-native';
 import Controls from '../Player/Controls';
 import {Video} from 'expo-av';
 import {play, pause, resetVideo, mute, changeVol} from '../Player/player';
+import {useSelector} from 'react-redux'
+
 function PlayLayout (props) {
-  
   const [video,setvideo]=useState()
   const [viseoStatus,setvideoStatus]=useState({
     play:false,
@@ -25,7 +26,7 @@ function PlayLayout (props) {
   const changeVolumen = (very) => {
 
     if( viseoStatus.volumen <= 1.0 &&  viseoStatus.volumen >= 0){
-      if(very){
+      if(very){ 
         const newVol = viseoStatus.volumen + .1 
         setvideoStatus({
           ...viseoStatus,
