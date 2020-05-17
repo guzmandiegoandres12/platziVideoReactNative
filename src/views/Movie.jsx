@@ -1,11 +1,19 @@
 import React,{useCallback, Fragment} from 'react';
-import { View ,TouchableOpacity, StyleSheet, Image, Text} from 'react-native';
+import {TouchableOpacity, StyleSheet, Image } from 'react-native';
+import {useDispatch , useSelector} from 'react-redux';
+import { selectedMovieAction} from '../Actions/Actions';
 import PlayLayout from '../Componets/Layouts/PlayLayout';
 import Header from '../Componets/Header';
-import {useDispatch} from 'react-redux';
-import { selectedMovieAction} from '../Actions/Actions';
+import Details from '../Componets/Details';
+
 export default function  Movie(){
   const dispatch=useDispatch()
+  const {
+    medium_cover_image:movieImage,
+    title,
+    summary
+  }=useSelector(({movieSelected})=>movieSelected)
+
   const close = useCallback(
     ()=>dispatch(selectedMovieAction(null)),
     [dispatch]
@@ -24,6 +32,11 @@ export default function  Movie(){
         </TouchableOpacity>
       </Header>
       <PlayLayout />
+      <Details 
+        title={title}
+        description={summary}
+        image={movieImage}
+      />
     </Fragment>
   )
 }

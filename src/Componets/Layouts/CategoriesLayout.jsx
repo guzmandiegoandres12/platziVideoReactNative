@@ -17,7 +17,7 @@ export default CategoriesLayout
 
 const styles=StyleSheet.create({
   container:{
-    flex:.3,
+    height:120,
     marginTop:10,
     marginHorizontal:10,
   },
