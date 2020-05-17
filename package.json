@@ -9,6 +9,7 @@
     "devTools": "react-devtools"
   },
   "dependencies": {
+    "@react-native-community/async-storage": "^1.10.1",
     "expo": "~37.0.10",
     "expo-av": "^8.1.0",
     "expo-constants": "^9.0.0",
@@ -22,7 +23,8 @@
     "react-native-unimodules": "~0.9.0",
     "react-native-web": "~0.11.7",
     "react-redux": "^7.2.0",
-    "redux": "^4.0.5"
+    "redux": "^4.0.5",
+    "redux-persist": "5.10.0"
   },
   "devDependencies": {
     "@babel/core": "~7.9.0",

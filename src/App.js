@@ -6,13 +6,12 @@ import Sugetionslist from './Componets/SugetionsList';
 import CategoriesList from './Componets/CategoriesList';
 import PlayLayout from './Componets/Layouts/PlayLayout';
 import Api from '../utils/api';
-import {createStore} from 'redux';
-import {Reducer} from './Reducers/reducers';
+import { PersistGate } from 'redux-persist/integration/react';
 import {Provider} from 'react-redux'
-
-const store=createStore(Reducer,{data:"ok"})
+import { store, persistor} from '../persistor'
 
 export default class App  extends Component {
+  
   constructor(props){
     super(props)
     this.state={
@@ -41,12 +40,14 @@ export default class App  extends Component {
   render(){
     return (
       <Provider store={store}>
-        <Home>
-          <Header />
-          <PlayLayout />
-          <CategoriesList />
-          <Sugetionslist  />
-        </Home>
+        <PersistGate persistor={persistor} loading={<Text>cargando</Text>} >
+          <Home>
+            <Header />
+            <PlayLayout />
+            <CategoriesList />
+            <Sugetionslist  />
+          </Home>
+       </PersistGate>
       </Provider>
     );
   }
