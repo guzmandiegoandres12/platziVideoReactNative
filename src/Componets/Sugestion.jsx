@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
-import { View,Text, StyleSheet, Image } from 'react-native';
-import {useSelector} from 'react-redux'
+import { View,Text, StyleSheet, Image , TouchableOpacity} from 'react-native';
 
 export default function  Sugestion (props) {
 
   return (
-    <View style={styles.container}>
+    <TouchableOpacity
+      style={styles.container}
+      onPress={()=>props.onPress()}
+    >
       <View style={styles.image}>
         <Image source={{
             uri: props.medium_cover_image
@@ -26,7 +28,7 @@ export default function  Sugestion (props) {
             <Text style={styles.label}>Año {props.year}</Text>
             <Text>{props.rating} Estrellas</Text>
       </View>
-    </View>
+    </TouchableOpacity>
   );
   
 }
